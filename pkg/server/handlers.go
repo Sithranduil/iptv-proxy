@@ -71,6 +71,8 @@ func (c *Config) stream(ctx *gin.Context, oriURL *url.URL) {
 		return
 	}
 
+	req.Header.Set("User-Agent", "VLC/3.0.9 LibVLC/3.0.9")
+
 	mergeHttpHeader(req.Header, ctx.Request.Header)
 
 	resp, err := client.Do(req)
